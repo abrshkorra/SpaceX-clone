@@ -82,8 +82,8 @@ ul{
     height: 1px;
     background: #fff;
     transform: scaleX(0);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     transform-origin: right center;
-    transition: transform 0.6s ease-in-out;
 
 }
 
@@ -93,8 +93,9 @@ ul{
     transition-duration: 0.4s;
 }
 
-
+/* Secions */
 section {
+    position: relative;
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
@@ -113,17 +114,44 @@ section {
     font-size: 22px;
     margin-bottom: 5px;
     font-weight: 300;
+    animation: fadeInUp 0.9s ease-in-out;
 }
 
 .section-inner h2{
     font-size: 50px;
     font-weight: 700;
     margin-bottom: 20px;
+    animation: fadeInUp 0.9s ease-in-out 0.2s;
+    animation-fill-mode: both;
 }
+
+.section-inner a{
+    animation: fadeInUp 0.5s ease-in-out 0.4s;
+    animation-fill-mode: both;
+}
+
+
 /* Background images */
 .section-a{
+    background-image: url(../img/Homepage6.webp);
+}
+.section-b{
+    background-image: url(../img/Homepage2.webp);
+}
+.section-c{
+    background-image: url(../img/Homepage3.webp);
+}
+.section-d{
     background-image: url(../img/Homepage_Desktop.webp);
 }
+.section-e{
+    background-image: url(../img/Homepage4.webp);
+}
+.section-f{
+    background-image: url(../img/Homepage5.webp);
+}
+
+
 .btn {
     position: relative;
     display: inline-block;
@@ -142,6 +170,7 @@ section {
 .btn:hover span {
     color: #000;
 }
+
 .btn .hover {
     position: absolute;
     top: 0;
@@ -153,8 +182,113 @@ section {
     z-index: -1;
     transform: translateY(100%);
     transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-  
-  .btn:hover .hover {
+}
+
+.btn:hover .hover {
     transform: translateY(0);
-  }
+}
+
+
+/* Scroll Arrow */ 
+.scroll-arrow{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeBounce 5s infinite;
+}
+
+/* Footer */
+
+footer{
+    position: relative;
+    padding: 55px 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+footer ul li {
+    margin-right: 30px;
+    color: #aaa;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 2.5;
+}
+
+footer ul li a {
+    color: #fff;
+    transition: color 0.6s;
+}
+
+footer ul li a:hover{
+    color: #aaa;
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    0%{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes fadeBounce {
+    0%, 20%, 50%, 80%, 100% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    40%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* Media queries */
+@media(max-width: 960px){
+    /* Hide desktop menu */
+    .desktop-main-menu {
+        display: none;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    .section-inner{
+        bottom: 75px;
+        left: 20px;
+    }
+
+    .section-inner h2{
+        font-size: 40px;
+    }
+
+    footer ul li:first-child{
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    footer ul li {
+        margin-right: 15px;
+    }
+
+    .logo{
+        width: 150px;
+        margin: auto;
+    }
+}
