@@ -56,8 +56,6 @@ ul{
 /* Desltop Menu */
 .desktop-main-menu{
     margin-right: 50px;
-    
-
 }
 
 .desktop-main-menu ul {
@@ -66,9 +64,12 @@ ul{
 
 .desktop-main-menu ul li {
     position: relative;
-    margin-right: 20px;
+    margin-right: 25px;
     padding-bottom: 2px;
 }
+/* .desktop-main-menu ul li:last-child{
+    
+} */
 
 
 
@@ -245,6 +246,7 @@ footer ul li a:hover{
 .hamburger-top,
 .hamburger-middle,
 .hamburger-bottom {
+    margin-top: 3px;
     position: absolute;
     width: 20px;
     height: 2px;
@@ -286,8 +288,63 @@ footer ul li a:hover{
     z-index: 3;
 }
 
+/* Stop body scroll */
 .stop-scrolling{
     overflow: hidden;
+}
+
+/* Hide mobile mobile main menu items */
+.mobile-only{
+    display: none;
+}
+
+/* Mobile menu */
+.mobile-main-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: 100%;
+    background: #000;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Bring mobile menu in */
+.show-menu {
+    transform: translateX(0);
+}
+
+.mobile-main-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    padding: 50px;
+    width: 100%;
+}
+
+.mobile-main-menu ul li {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 1px #555 dotted;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 8px;
+}
+
+.mobile-main-menu ul li a {
+    color: #fff;
+    transition: color 0.6s;
+}
+
+.mobile-main-menu ul li a:hover{
+    color: #aaa;
 }
 
 /* Animations */
@@ -321,6 +378,11 @@ footer ul li a:hover{
     /* Hide desktop menu */
     .desktop-main-menu {
         display: none;
+    }
+
+    /* Show mobile menu */
+    .mobile-only{
+        display: block;
     }
 }
 
