@@ -347,6 +347,55 @@ footer ul li a:hover{
     color: #aaa;
 }
 
+/* Inner pages */
+.bg-flacon-9{
+    background-image: url(../img/f9_feature.webp);
+}
+
+.section-animate{
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.section-inner-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-inner-center h3 {
+    font-size: 75px;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.5s ease-in-out;
+}
+.section-inner-center p {
+    font-size: 20px;
+    animation: fadeInUp 0.5s ease-in-out 0.2s;
+    animation-fill-mode: both;
+}
+
+/* stats */
+
+.stats {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.stats div span{
+    font-size: 160px;
+}
+.stats div h4{
+    font-size: 24px;
+    font-weight: 300;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     0%{
@@ -357,6 +406,16 @@ footer ul li a:hover{
     100%{
         opacity: 1;
         transform: translate(0);
+    }
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    
+    100%{
+        opacity: 1;
     }
 }
 
